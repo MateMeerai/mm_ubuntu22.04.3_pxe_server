@@ -128,3 +128,6 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
 
    Now, boot any computer on the network via PXE and you should see that the iPXE firmware is being used for the process.
 
+
+# This guide was copied from https://linuxhint.com/pxe_boot_ubuntu_server/, I adjusted the configurations to suit my needs.
+
