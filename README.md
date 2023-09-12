@@ -74,3 +74,20 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
    ````
    vim /etc/dnsmasq.conf
    ````
+
+   After setting up the new configuration we need to restart the dnsmasq service
+   ````
+   systemctl restart dnsmasq
+   ````
+
+#  5. Installing and configuring NFS server
+
+   Installing the needed package
+   ````
+   apt install nfs-kernel-server -y
+   ````
+
+   To share the pxeboot/ directory we need to adjust following file
+   ````
+   vim /etc/exports
+   ````
