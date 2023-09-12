@@ -44,5 +44,33 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
    create a boot configuration so iPXE automaticly uses your computer
 
    ````
-   vim /git/ipxe/src/bootconfig.ipxe
+   cd /git/ipxe/src
+   vim bootconfig.ipxe
+   ````
+
+   In the same directory execute following command to compile  boot firmware files for BOOT and UEFI systems
+
+   ````
+   make bin/ipxe.pxe bin/undionly.kpxe bin/undionly.kkpxe bin/undionly.kkkpxe bin-x86_64-efi/ipxe.efi EMBED=bootconfig.ipxe
+   ````
+   then the files can be copied to the firmware folder inside pxeboot
+   ````
+   cp -v bin/{ipxe.pxe,undionly.kpxe,undionly.kkpxe,undionly.kkkpxe} bin-x86_64-efi/ipxe.efi /srv/pxeboot/firmware/
+   ````
+
+#  4. Installing and Configuring DHCP and TFTP servers
+
+   Install dnsmasq
+   ````
+   apt install dnsmasq -y
+   ````
+
+   make a backup of the conf
+   ````
+   mv -v /etc/dnsmasq.conf /etc/dnsmasq.conf.backup
+   ````
+
+   setup a new configuration file for dnsmasq
+   ````
+   vim /etc/dnsmasq.conf
    ````
