@@ -1,0 +1,22 @@
+network:
+  ethernets:
+    enp0s8:
+      dhcp4: no
+      dhcp6: no
+      dresses:
+        - 192.168.121.2/24
+      routes:
+        - to: default
+          via: 10.1.1.3
+      nameservers:
+        addresses:
+          - 1.1.1.1
+          - 8.8.8.8
+    enp0s3:
+      dhcp4: true
+      dhcp6: no
+      nameservers:
+        addresses:
+          - 1.1.1.1
+          - 2.2.2.2
+  version: 2
