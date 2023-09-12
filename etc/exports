@@ -1,0 +1,1 @@
+/srv/pxeboot/           *(ro,sync,no_wdelay,insecure_locks,no_root_sqash,insecure,no_subtree_check)
