@@ -3,10 +3,11 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
 
 #  1. Setup Netplan
 
+   Change network settings:
    ````
    vim /etc/netplan/00-installer-config.yaml
    ````
-   and apply changes
+   and apply changes:
    ````
    netplan apply
    ````
@@ -20,6 +21,7 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
    unlink /etc/resolv.conf
    ````
 
+   Adjust nameservers:
    ````
    vim /etc/resolv.conf
    ````
