@@ -91,3 +91,37 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
    ````
    vim /etc/exports
    ````
+   and execute following command
+   ````
+   exportfs -av
+   ````
+
+# 6. Configuring iPXE to PXE Boot Ubuntu 22.04.3 live server installer
+
+   Download the server image with following command, the directory doesn't matter besause the files will be extracted and copied to a different folder
+   ````
+   wget https://releases.ubuntu.com/jammy/ubuntu-22.04.3-live-server-amd64.iso
+   ````
+
+   mount the iso file to following directory
+   ````
+   mount -o loop /directory/to/ubuntu-22.04.3-live-server-amd64.iso /mnt
+   ````
+
+   create a dedicated folder for the image files and copy the iso files into the directory
+   ````
+   mkdir -pv /srv/pxeboot/os-images/ubuntu-22.04.3-live-server-amd64
+   rsync -avz /mnt/ /srv/pxeboot/os-images/ubuntu-22.04.3-live-server-amd64/
+   ````
+   when the process is finished you can unmount the image and delete it
+   ````
+   unmount /mnt
+   rm -v /directory/to/ubuntu-22.04.3-live-server-amd64.iso
+   ````
+
+   seting up the iPXE boot config
+   ````
+   vim /srv/pxeboot/config/boot.ipxe
+   ````
+
+
