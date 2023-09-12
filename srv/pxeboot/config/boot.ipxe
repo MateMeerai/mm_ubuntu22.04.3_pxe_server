@@ -1,21 +1,16 @@
 #!ipxe
 
 set server_ip  192.168.121.2
-
 set root_path  /srv/pxeboot
 
 menu Select an OS to boot
-
 item ubuntu-22.04.3-live-server-amd64         Install Ubuntu Server 22.04.3 LTS
 
 choose --default exit --timeout 10000 option && goto ${option}
 
 :ubuntu-22.04-desktop-amd64
-
 set os_root os-images/ubuntu-22.04.3-live-server-amd64
-
 kernel tftp://${server_ip}/${os_root}/casper/vmlinuz
 initrd tftp://${server_ip}/${os_root}/casper/initrd
-
 imgargs vmlinuz initrd=initrd boot=casper maybe-ubiquity netboot=nfs ip=dhcp nfsroot=${server_ip}:${root_path}/${os_root} quiet splash ---
 boot
