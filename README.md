@@ -124,4 +124,7 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
    vim /srv/pxeboot/config/boot.ipxe
    ````
 
+#  7. PXE boot
+
+   Now, boot any computer on the network via PXE and you should see that the iPXE firmware is being used for the process.
 
