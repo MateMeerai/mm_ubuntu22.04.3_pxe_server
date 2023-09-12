@@ -26,5 +26,23 @@ Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over N
    vim /etc/resolv.conf
    ````
 
-   
-   
+
+#  3. Downloading iPXE Source Code and Compiling iPXE
+
+   Installing needed tools and libs
+   ````
+   apt install build-essentials liblzma isolinux git -y
+   ````
+
+   Clone the ipxe repo
+
+   ````
+   cd /git
+   git clone https://github.com/ipxe/ipxe.git
+   ````
+
+   create a boot configuration so iPXE automaticly uses your computer
+
+   ````
+   vim /git/ipxe/src/bootconfig.ipxe
+   ````
