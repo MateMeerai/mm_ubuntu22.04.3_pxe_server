@@ -1,5 +1,6 @@
 # Setup process of an PXE server on Ubuntu_22.04.3-live-server using dnsmasq
-Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over Network with two networks
+Setup of a Ubuntu 22.04.3 Server to use as an PXE server to deploy Images over Network with two networks.
+
 All mentioned files can be found unter the correct directory location in this repository.
 
 #  1. Setup Netplan
